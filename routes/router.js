@@ -1,12 +1,12 @@
 "use strict";
 
 var  PasajerosController = require("../controllers/pasajeros-controller"),
-  express = require("express"),
-  router = express.Router();
+     ReservaController = require("../controllers/reserva-controller"),
 
-var  ReservaController = require("../controllers/reserva-controller"),
-  express = require("express"),
-  router = express.Router();
+    express = require("express"),
+    router = express.Router();
+
+
 
 router
   //**** ENTIDADPASAJEROS *****/
