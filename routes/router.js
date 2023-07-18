@@ -1,6 +1,7 @@
 "use strict";
 
 var  PasajerosController = require("../controllers/pasajeros-controller"),
+     AvionController = require("../controllers/avion-controller"),
      ReservaController = require("../controllers/reserva-controller"),
 
     express = require("express"),
@@ -15,7 +16,13 @@ router
   .post("pasajeros//insert/:codigo_pasajero", PasajerosController.post)
   .put("/pasajero/update/:codigo_pasajero", PasajerosController.put)
   .delete("/pasajero/delete/:codigo_pasajero", PasajerosController.delete)
-  
+
+  //***avion*****
+  .get("/avion/getall", AvionController.getAll)
+  .get("/avion/getone/:numero_avion", AvionController.getone)
+  .post("/avion/insert/:numero_avion", AvionController.post)
+  .put("/avion/update/:numero_avion", AvionController.put)
+  .delete("/avion/delete/:numero_avion", AvionController.delete)
 
   //****RUTAS DE RESERVA****
   .get("/reserva/getall", ReservaController.getAll)
@@ -23,6 +30,8 @@ router
   .post("/reserva/insertar/:numero_reserva", ReservaController.post)
   .put("/reserva/actualizar/:numero_reserva", ReservaController.put)
   .delete("/reserva/eliminar/:numero_reserva", ReservaController.delete)
+
+  .use(AvionController.error404)
   .use(ReservaController.error404);
 
 
