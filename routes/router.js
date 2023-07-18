@@ -13,4 +13,13 @@ router
   .delete("/pasajero/delete/:codigo_pasajero", PasajerosController.delete)
   
 
+  //****RUTAS DE RESERVA****
+  .get("/reserva/getall", ReservaController.getAll)
+  .get("/reserva/getone/:numero_reserva", ReservaController.getone)
+  .post("/reserva/insertar/:numero_reserva", ReservaController.post)
+  .put("/reserva/actualizar/:numero_reserva", ReservaController.put)
+  .delete("/reserva/eliminar/:numero_reserva", ReservaController.delete)
+  .use(ReservaController.error404);
+
+
 module.exports = router;
