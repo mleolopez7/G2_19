@@ -4,6 +4,10 @@ var  PasajerosController = require("../controllers/pasajeros-controller"),
   express = require("express"),
   router = express.Router();
 
+var  ReservaController = require("../controllers/reserva-controller"),
+  express = require("express"),
+  router = express.Router();
+
 router
   //**** ENTIDADPASAJEROS *****/
   .get("/pasajeros/getall", PasajerosController.getAll)
