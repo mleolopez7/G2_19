@@ -1,16 +1,16 @@
 "use strict";
-//ESTO ES UN EJEMPLO DE LAS RUTAS
-var  AlumnoController = require("../controllers/alumno-controller"),
+
+var  PasajerosController = require("../controllers/pasajeros-controller"),
   express = require("express"),
   router = express.Router();
 
 router
-  //****ALUMNO EJEMPLO****
-  .get("/alumno/getall", AlumnoController.getAll)
-  .get("/alumno/getone/:no_cuenta", AlumnoController.getOne)
-  .post("/alumno/insertar/:no_cuenta", AlumnoController.post)
-  .put("/alumno/actualizar/:no_cuenta", AlumnoController.put)
-  .delete("/alumno/eliminar/:no_cuenta", AlumnoController.delete)
-  .use(AlumnoController.error404);
+  //**** ENTIDADPASAJEROS *****/
+  .get("/pasajeros/getall", PasajerosController.getAll)
+  .post("/pasajeros/getone/:codigo_pasajero", PasajerosController.getOne)
+  .post("pasajeros//insert/:codigo_pasajero", PasajerosController.post)
+  .put("/pasajero/update/:codigo_pasajero", PasajerosController.put)
+  .delete("/pasajero/delete/:codigo_pasajero", PasajerosController.delete)
+  
 
 module.exports = router;
