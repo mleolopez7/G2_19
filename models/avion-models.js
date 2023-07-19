@@ -1,8 +1,7 @@
 "use strict";
 
-const AvionController = require("../controllers/avion-controller");
 
-var conn = require(".../confing/db-connection"),
+var conn = require("../config/db-connection"),
 AvionModel = () =>  {};
 
 AvionModel.getAll = (cb) =>  conn.query("SELECT * FROM AVION", cb);

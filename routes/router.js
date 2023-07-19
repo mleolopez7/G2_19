@@ -34,7 +34,8 @@ router
   .delete("/reserva/eliminar/:numero_reserva", ReservaController.delete)
 
   .use(AvionController.error404)
-  .use(ReservaController.error404);
+  .use(ReservaController.error404)
+  .use(pasajerosController.error404);
 
 
 module.exports = router;

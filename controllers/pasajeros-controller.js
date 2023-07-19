@@ -114,7 +114,7 @@ var PasajerosModel = require('../models/pasajeros-models'),
 }
 
 //DELETE
-pasajerosController.delete = (req, res, next) =>{
+PasajerosController.delete = (req, res, next) =>{
     let codigo_pasajero = req.body.codigo_pasajero
     console.log(codigo_pasajero)
 
@@ -134,14 +134,14 @@ pasajerosController.delete = (req, res, next) =>{
       {
         res.send("Pasajeros eliminados de forma correcta");
       }
-    });
+    })
         
 }
 
 PasajerosController.addForm = (req, res, next) => 
 res.render('add-pasajeros', {litle: 'Agregar pasajero'}) 
 
-pasajerosController.error404 = (req, res, next) => {
+PasajerosController.error404 = (req, res, next) => {
      let error = new Error(),
      locals = {
         litle: 'Error 404',
@@ -156,4 +156,4 @@ pasajerosController.error404 = (req, res, next) => {
     
 
 }
-module.exports = pasajerosController;
+module.exports = PasajerosController;

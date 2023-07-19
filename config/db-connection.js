@@ -1,7 +1,8 @@
 'use strict'
 
 const { Client } = require('pg');
-const conf = require('./db-conf');
+
+const conf = require("./db-conf");
 const myConn = new Client(conf)
 
 myConn.connect((err) => {

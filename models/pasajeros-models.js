@@ -1,7 +1,7 @@
 "use strict";
 
 
-var conn = require(".../config/db-connection"),
+var conn = require("../config/db-connection"),
 PasajerosModel = () =>  {};
 
 
