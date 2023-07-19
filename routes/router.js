@@ -20,8 +20,8 @@ router
 
 
   //***avion*****
-  .get("/avion/getall", AvionController.getAll)
-  .get("/avion/getone/:numero_avion", AvionController.getone)
+  .get("/avion/getAll", AvionController.getAll)
+  .post("/avion/getOne/:numero_avion", AvionController.getOne)
   .post("/avion/insert/:numero_avion", AvionController.post)
   .put("/avion/update/:numero_avion", AvionController.put)
   .delete("/avion/delete/:numero_avion", AvionController.delete)
