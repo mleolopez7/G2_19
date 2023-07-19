@@ -1,8 +1,9 @@
 'use strict'
-var AvionModel = require('../models/Avion-Models'),
-    AvionController = () => {}
+//get all
 
-    AvionController.getAll = (req, res, next)  => {
+var AvionModel = require('../models/Avion-Models'),
+AvionController = () => {}
+ AvionController.getAll = (req, res, next)  => {
         AvionModel.getAll((err, rows)  => {
             if(err)
             {
@@ -103,7 +104,7 @@ var AvionModel = require('../models/Avion-Models'),
           res.send("Avion eliminado de forma correcta")
         }
       })
- }
+    }
 
 
 
@@ -120,5 +121,5 @@ var AvionModel = require('../models/Avion-Models'),
            error.status = 404
            res.render('error', locals)
            next()
-}
+        }
 module.exports = AvionController;

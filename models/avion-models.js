@@ -4,9 +4,9 @@
 var conn = require("../config/db-connection"),
 AvionModel = () =>  {};
 
-AvionModel.getAll = (cb) =>  conn.query("SELECT * FROM AVION", cb);
+AvionModel.getAll = (cb) =>  conn.query("SELECT * FROM avion", cb);
 
-AvionModel.getOne = (data, cb) => conn.query( "SELECT * FROM AVION WHERE NUMERO_AVION =$1",[data.numero_avion], cb);
+AvionModel.getOne = (numero_avion, cb) => conn.query( "SELECT * FROM avion WHERE numero_avion =$1",[numero_avion], cb);
 
 AvionModel.post = (data, cb) => 
      
@@ -36,7 +36,7 @@ AvionModel.put = (data,cb) =>
           ],
           cb);
 
-AvionModel.delete = (data, cb) =>
+AvionModel.delete = (numero_avion, cb) =>
 conn.query(
     "call public.sp_avion_delete ($1)", [data.numero_avion], cb
 );
