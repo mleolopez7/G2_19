@@ -45,5 +45,5 @@ VueloModel.delete = (codigo_vuelo, cb) =>
         "call public.sp_vuelo_delete($1)", [codigo_vuelo],
     cb);
 
-
+    
 module.exports = ReservaModel;
