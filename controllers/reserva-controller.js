@@ -2,7 +2,7 @@
 
 //GET ALL ....
 
-var ReservaModel = require ('../models/Reserva-Model'),
+var ReservaModel = require ('../models/reserva-model'),
 ReservaController = () => {}
 
 ReservaController.gelAll = (req,res,next) => {

@@ -4,12 +4,11 @@ var conn = require ("../config/db-connection"),
 VueloModel = () => {};
 
 //MODELO GET ALL
-VueloModel.gelAll = (cb) => conn.query("SELECT * FROM Vuelo", cb);
+VueloModel.getAll = (cb) => conn.query("SELECT * FROM Vuelo", cb);
 
 //MODELO GET ONE 
 VueloModel.getone = (codigo_vuelo, cb) =>
-conn.query(
-    "SELECT * FROM Reserva WHERE codigo_vuelo = $1", [codigo_vuelo], cb);
+conn.query("SELECT * FROM Reserva WHERE codigo_vuelo = $1", [codigo_vuelo], cb);
 
 //MODELO INSERTAR
 VueloModel.post = (data, cb) =>
@@ -41,8 +40,7 @@ VueloModel.put = (data, cb) =>
 
 //MODELO DELETE
 VueloModel.delete = (codigo_vuelo, cb) =>
-    conn.query(
-        "call public.sp_vuelo_delete($1)", [codigo_vuelo],
+    conn.query("call public.sp_vuelo_delete($1)", [codigo_vuelo],
     cb);
 
     
