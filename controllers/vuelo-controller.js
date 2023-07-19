@@ -1,7 +1,7 @@
 'use strict'
 
 //CONTROL GET ALL
-var VueloModel = require('../models/Vuelo-models'),
+var VueloModel = require('../models/vuelo-models'),
     VueloController = () => {}
 
     VueloController.getAll = (req, res, next)  => {
