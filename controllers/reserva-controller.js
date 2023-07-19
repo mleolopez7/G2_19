@@ -2,10 +2,10 @@
 
 //GET ALL ....
 
-var ReservaModel = require ('../models/reserva-model'),
+var ReservaModel = require ('../models/reserva-models'),
 ReservaController = () => {}
 
-ReservaController.gelAll = (req,res,next) => {
+ReservaController.getAll = (req,res,next) => {
     ReservaModel.getAll((err,rows) => {
         if(err){
             let locals = {
