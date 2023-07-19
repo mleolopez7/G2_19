@@ -1,13 +1,13 @@
 'use strict'
-var AvionModel = require('../models/avion-model'),
+var AvionModel = require('../models/avion-models'),
     AvionController = () => {}
 
-    AvionControllerController.getAll = (req, res, next)  => {
+    AvionController.getAll = (req, res, next)  => {
         AvionModel.getAll((err, rows)  => {
             if(err)
             {
                 let locals = {
-                    title: 'Error al consultar la base de datos',
+                    litle: 'Error al consultar la base de datos',
                     description: 'Error de sintaxis SQL',
                     error : err
                 }
@@ -25,7 +25,8 @@ var AvionModel = require('../models/avion-model'),
     }
 
     AvionController.getOne = (req, res, next) => {
-        let avion ={
+        let avion
+         ={
             numero_avion : req.body-numero_avion
         }
         console.log(avion)
@@ -35,7 +36,7 @@ var AvionModel = require('../models/avion-model'),
             if(err)
             {
                 let locals = {
-                    title: 'Error al consultar la base de datos con el id: ${avion.numero_avion} ',
+                    litle: 'Error al consultar la base de datos con el id: ${avion.numero_avion} ',
                     descripcion: 'Error de sintaxis SQL',
                     error: err
                 }
@@ -45,7 +46,7 @@ var AvionModel = require('../models/avion-model'),
             else
             {
                let locals ={
-                title: 'Avion seleccionado',
+                litle: 'Avion seleccionado',
                 data: rows
                }
                res.status(200).send(rows.rows) 
@@ -73,7 +74,7 @@ var AvionModel = require('../models/avion-model'),
                description: 'error de sintaxis SQL',
                error: err
                }
-                res.satatus(520).json(err);
+                res.status(520).json(err);
            } 
            else  
            {
@@ -82,25 +83,28 @@ var AvionModel = require('../models/avion-model'),
 
         } )
     }
-            AvionModel.delete(avion, (err,rows) => {
-             console.log(err, '---', rows, locals)
-                if(err)
-                {
-                    let locals = {
-                      title: 'error al eliminar el registro de avion',
-                      description: 'error de sintaxis SQL',
-                      error: err
-                    }
-                    res.render('error', locals)
-                }
-               else
-                {
-                    res.dend('Avion eliminado de forma correcta')
+    AvionController.delete = (req, res, next) => {
+        let numero_avion = req.body.numero_avion
+        console.log(numero_avion)
 
-                }
-               
-            } )
-        
+      AvionModel.delete(numero_avion,(err)) => {
+        if (err) 
+        {
+          let locals = {
+            litle: "error al eliminar el registro de avion",
+            description: "error de sintaxis SQL",
+            error: err,
+          }
+          res.status(520).json(err);
+
+        } 
+        else 
+        {
+          res.send("Avion eliminado de forma correcta")
+        }
+      })
+ }
+
 
 
          AvionController.addForm = (req, res, next) => 
@@ -109,7 +113,7 @@ var AvionModel = require('../models/avion-model'),
            AvionController.error404 = (req, res, next) => {
                 let error = new Error(),
                 locals = {
-                    title: 'Errpor 404',
+                    title: 'Error 404',
                     description: 'Recurso no encontrado',
                     error: error
                 }
