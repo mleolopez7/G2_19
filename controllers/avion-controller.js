@@ -87,7 +87,7 @@ var AvionModel = require('../models/avion-models'),
         let numero_avion = req.body.numero_avion
         console.log(numero_avion)
 
-      AvionModel.delete(numero_avion,(err)) => {
+      AvionModel.delete(numero_avion,(err) => {
         if (err) 
         {
           let locals = {
