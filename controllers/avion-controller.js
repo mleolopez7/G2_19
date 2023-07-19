@@ -1,5 +1,5 @@
 'use strict'
-var AvionModel = require('../models/avion-models'),
+var AvionModel = require('../models/Avion-Models'),
     AvionController = () => {}
 
     AvionController.getAll = (req, res, next)  => {
