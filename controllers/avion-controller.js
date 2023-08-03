@@ -8,7 +8,7 @@ AvionController = () => {}
             if(err)
             {
                 let locals = {
-                    title: 'Error al consultar la base de datos',
+                    litle: 'Error al consultar la base de datos',
                     description: 'Error de sintaxis SQL',
                     error : err
                 }
@@ -17,13 +17,12 @@ AvionController = () => {}
             else 
             {
                 let locals ={
-                    title: 'Lista de Aviones',
+                    litle: 'Lista de Aviones',
                     data: rows
                 }
                 res.status(200).send(rows.rows)
             }
         })
-        //AvionModel.use = req
     }
 
     AvionController.getOne = (req, res, next) => {
@@ -38,7 +37,7 @@ AvionController = () => {}
             if(err)
             {
                 let locals = {
-                    title: 'Error al consultar la base de datos con el id: ${avion.numero_avion} ',
+                    litle: 'Error al consultar la base de datos con el id: ${avion.numero_avion} ',
                     descripcion: 'Error de sintaxis SQL',
                     error: err
                 }
@@ -48,7 +47,7 @@ AvionController = () => {}
             else
             {
                let locals ={
-                title: 'Avion seleccionado',
+                litle: 'Avion seleccionado',
                 data: rows
                }
                res.status(200).send(rows.rows) 
@@ -93,7 +92,7 @@ AvionController = () => {}
         if (err) 
         {
           let locals = {
-            title: "error al eliminar el registro de avion",
+            litle: "error al eliminar el registro de avion",
             description: "error de sintaxis SQL",
             error: err,
           }
